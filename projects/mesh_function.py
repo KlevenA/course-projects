@@ -3,12 +3,20 @@ from collections.abc import Callable
 
 
 def mesh_function(f: Callable[[float], float], t: float) -> np.ndarray:
-    raise NotImplementedError
+    f_mesh = [] # initializing f_mesh
+    t_mesh = np.linspace(0,t) # initialize t-mesh
+    for n in range (len(t_mesh)):
+        f_mesh(n) = f(n)
 
 
 def func(t: float) -> float:
     raise NotImplementedError
-
+    if t < 0 and t >= 3:
+        func(t)=e**(-t)
+    elif t > 3 and t <= 4:
+        func(t)=e**(-3*t)
+   # else 
+        #print("Outside of function range")
 
 def test_mesh_function():
     t = np.array([1, 2, 3, 4])
